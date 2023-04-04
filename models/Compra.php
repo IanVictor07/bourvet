@@ -37,6 +37,7 @@ class Compra extends \yii\db\ActiveRecord
             [['cliente_id'], 'integer'],
             [['forma_pag'], 'string', 'max' => 255],
             [['cliente_id'], 'exist', 'skipOnError' => true, 'targetClass' => Cliente::class, 'targetAttribute' => ['cliente_id' => 'id']],
+            [['servico_id'], 'exist', 'skipOnError' => true, 'targetClass' => Servico::class, 'targetAttribute' => ['servico_id' => 'id']],
         ];
     }
 
@@ -52,6 +53,7 @@ class Compra extends \yii\db\ActiveRecord
             'data_pag' => 'DATA DO PAGAMENTO',
             'forma_pag' => 'FORMA DE PAGAMENTO',
             'cliente_id' => 'CLIENTE',
+            'servico_id' => 'SERVIÇO'
         ];
     }
 
@@ -70,8 +72,8 @@ class Compra extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getItensServicos()
+    public function getServicos()
     {
-        return $this->hasMany(ItensServico::class, ['compra_id' => 'id']);
+        return $this->hasMany(ItensServico::class, ['servico_id' => 'id']);
     }
 }

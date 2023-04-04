@@ -9,6 +9,9 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\data\ActiveDataProvider;
 use yii\grid\GridView;
+use yii\filters\AccessControl;
+use yii\web\ForbiddenHttpException;
+
 
 /**
  * ClienteController implements the CRUD actions for Cliente model.
@@ -29,6 +32,7 @@ class ClienteController extends Controller
                         'delete' => ['POST'],
                     ],
                 ],
+     
             ]
         );
     }
@@ -43,10 +47,14 @@ class ClienteController extends Controller
         $searchModel = new ClienteSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
+
         return $this->render('index', [
             'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'dataProvider' => $dataProvider, 
+         
         ]);
+
+        
     }
 
     /**
@@ -61,14 +69,13 @@ class ClienteController extends Controller
 
         $dataProvider = new ActiveDataProvider([
 
-            'query'=>$this->findModel($id)->getCompras(),
-
-        ]);
+            'query'=>$this->findModel($id)->getCompras(), 
             
+        ]);
+        
             return $this->render('view',[
             'model'=> $this-> findModel($id),
             'dataProvider'=> $dataProvider,
-            
             
         ]);
 
@@ -78,10 +85,9 @@ class ClienteController extends Controller
     {
 
         return $this->hasMany(Compra::class,['cliente_fk'=>'id'])->orderBy('data DESC');
-            
+        
     }
-            
-   
+
 
     /**
      * Creates a new Cliente model.

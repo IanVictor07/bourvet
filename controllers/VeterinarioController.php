@@ -27,6 +27,7 @@ class VeterinarioController extends Controller
                         'delete' => ['POST'],
                     ],
                 ],
+                
             ]
         );
     }

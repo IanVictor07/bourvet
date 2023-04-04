@@ -3,9 +3,9 @@
 use yii\db\Migration;
 
 /**
- * Class m230401_173617_animais
+ * Class m230402_212820_animal
  */
-class m230401_173617_animais extends Migration
+class m230402_212820_animal extends Migration
 {
     /**
      * {@inheritdoc}
@@ -22,22 +22,22 @@ class m230401_173617_animais extends Migration
         ]);
 
         $this->addForeignKey(
-        'cliente_fk_animal',
-        'animal',
-        'cliente_id',
-        'cliente',
-        'id',
-        'RESTRICT'
-    );
-        $this->addForeignKey(
-        'especie_fk',
-        'animal',
-        'especie_id',
-        'especie',
-        'id',
-        'RESTRICT'
-    );
+            'cliente_fk_animal',
+            'animal',
+            'cliente_id',
+            'cliente',
+            'id',
+            'RESTRICT'
+        );
 
+        $this->addForeignKey(
+            'especie_fk',
+            'animal',
+            'especie_id',
+            'especie',
+            'id',
+            'RESTRICT'
+        );
     }
 
     /**
@@ -60,7 +60,7 @@ class m230401_173617_animais extends Migration
 
     public function down()
     {
-        echo "m230401_173617_animais cannot be reverted.\n";
+        echo "m230402_212820_animal cannot be reverted.\n";
 
         return false;
     }

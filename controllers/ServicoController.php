@@ -27,6 +27,7 @@ class ServicoController extends Controller
                         'delete' => ['POST'],
                     ],
                 ],
+                
             ]
         );
     }

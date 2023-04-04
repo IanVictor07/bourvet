@@ -39,17 +39,4 @@ $this->params['breadcrumbs'][] = $this->title;
 
     ]) ?>
 
-<?= GridView::widget([//Essa grid view é responsável pela organização das compras de um usuário 
-//O view nada mais é do que aquele olhinho que clicamos e apresenta as informações
-
-'dataProvider' => $dataProvider,
-'summary' => '',
-'columns' => [
-//['class' => 'yii\grid\SerialColumn'],//Essa classe coloca números em série na primeira coluna
-'data_compra',
-'data_pag',
-'forma_pag',
-]
-]);?>
-
 </div>

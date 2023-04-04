@@ -4,12 +4,12 @@ namespace app\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Compra;
+use app\models\Usuario;
 
 /**
- * CompraSearch represents the model behind the search form of `app\models\Compra`.
+ * UsuarioSearch represents the model behind the search form of `app\models\Usuario`.
  */
-class CompraSearch extends Compra
+class UsuarioSearch extends Usuario
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,8 @@ class CompraSearch extends Compra
     public function rules()
     {
         return [
-            [['id', 'cliente_id', 'servico_id'], 'integer'],
-            [['data_compra', 'data_pag', 'forma_pag'], 'safe'],
+            [['id'], 'integer'],
+            [['login', 'senha', 'nome'], 'safe'],
         ];
     }
 
@@ -40,7 +40,7 @@ class CompraSearch extends Compra
      */
     public function search($params)
     {
-        $query = Compra::find();
+        $query = Usuario::find();
 
         // add conditions that should always apply here
 
@@ -59,13 +59,11 @@ class CompraSearch extends Compra
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'data_compra' => $this->data_compra,
-            'data_pag' => $this->data_pag,
-            'cliente_id' => $this->cliente_id,
-            'servico_id' => $this->servico_id
         ]);
 
-        $query->andFilterWhere(['like', 'forma_pag', $this->forma_pag]);
+        $query->andFilterWhere(['like', 'login', $this->login])
+            ->andFilterWhere(['like', 'senha', $this->senha])
+            ->andFilterWhere(['like', 'nome', $this->nome]);
 
         return $dataProvider;
     }

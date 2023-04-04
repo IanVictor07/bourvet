@@ -3,9 +3,9 @@
 use yii\db\Migration;
 
 /**
- * Class m230401_173532_servico
+ * Class m230402_210853_servico
  */
-class m230401_173532_servico extends Migration
+class m230402_210853_servico extends Migration
 {
     /**
      * {@inheritdoc}
@@ -16,7 +16,7 @@ class m230401_173532_servico extends Migration
             'id' => $this->primaryKey(),
             'nome' => $this->string()->notNull(),
             'descricao' => $this->string()->notNull(),
-            'preco' => $this->money()->notNull(),
+            'preco' => $this->decimal(10, 2)->notNull(),
         ]);
     }
 
@@ -37,7 +37,7 @@ class m230401_173532_servico extends Migration
 
     public function down()
     {
-        echo "m230401_173532_servico cannot be reverted.\n";
+        echo "m230402_210853_servico cannot be reverted.\n";
 
         return false;
     }

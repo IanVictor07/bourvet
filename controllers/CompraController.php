@@ -27,6 +27,7 @@ class CompraController extends Controller
                         'delete' => ['POST'],
                     ],
                 ],
+                
             ]
         );
     }

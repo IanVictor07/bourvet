@@ -23,7 +23,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>" class="h-100">
 <head>
-    <title><?= Html::encode($this->title) ?></title>
+    <title><?= Html::encode(Yii::$app->name) ?></title>
     <?php $this->head() ?>
 </head>
 <body class="d-flex flex-column h-100">
@@ -41,19 +41,21 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'Cliente', 'url' => ['/cliente/index']],
+            ['label' => 'Animais', 'url' => ['/animal/index']],
             ['label' => 'Compra', 'url' => ['/compra/index']],
             ['label' => 'Consulta', 'url' => ['/consulta/index']],
             ['label' => 'Serviços', 'url' => ['/servico/index']],
             ['label' => 'Veterinário', 'url' => ['/veterinario/index']],
-            ['label' => 'Animais', 'url' => ['/animal/index']],
             ['label' => 'Espécie', 'url' => ['/especie/index']],
+            ['label' => 'Usuário', 'url' => ['/usuario/index']],
+            ['label' => 'Relatórios', 'url' => ['/relatorios/index']],
            
             Yii::$app->user->isGuest
                 ? ['label' => 'Login', 'url' => ['/site/login']]
                 : '<li class="nav-item">'
                     . Html::beginForm(['/site/logout'])
                     . Html::submitButton(
-                        'Logout (' . Yii::$app->user->identity->username . ')',
+                        'Logout (' . Yii::$app->user->identity->nome . ')',
                         ['class' => 'nav-link btn btn-link logout']
                     )
                     . Html::endForm()
@@ -77,7 +79,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <footer id="footer" class="mt-auto py-3 bg-light">
     <div class="container">
         <div class="row text-muted">
-            <div class="col-md-6 text-center text-md-start">&copy; My Company <?= date('Y') ?></div>
+            <div class="col-md-6 text-center text-md-start">&copy;BOURVET</div>
             <div class="col-md-6 text-center text-md-end"><?= Yii::powered() ?></div>
         </div>
     </div>

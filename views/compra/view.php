@@ -38,7 +38,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'label'=>'CLIENTE',
 
             ],
-           
 
         ],
     ]) ?>

@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'observação',
             [
             'attribute'=>'cliente.nome',
-            'label'=>'CLIENTE'
+            'label'=>'DONO'
             ],
 
             [

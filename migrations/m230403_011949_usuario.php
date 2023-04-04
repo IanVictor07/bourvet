@@ -3,18 +3,20 @@
 use yii\db\Migration;
 
 /**
- * Class m230401_182015_especie
+ * Class m230403_011949_usuario
  */
-class m230401_182015_especie extends Migration
+class m230403_011949_usuario extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->createTable('especie', [
+        $this->createTable('usuario', [
             'id' => $this->primaryKey(),
-            'nome' => $this->string()->notNull(),
+            'login' => $this->string()->unique(),
+            'senha'=> $this->string(),
+            'nome'=> $this->string(),
         ]);
     }
 
@@ -23,7 +25,7 @@ class m230401_182015_especie extends Migration
      */
     public function safeDown()
     {
-        $this->dropTable('especie');
+        $this->dropTable('usuario');
     }
 
     /*
@@ -35,7 +37,7 @@ class m230401_182015_especie extends Migration
 
     public function down()
     {
-        echo "m230401_182015_especie cannot be reverted.\n";
+        echo "m230403_011949_usuario cannot be reverted.\n";
 
         return false;
     }

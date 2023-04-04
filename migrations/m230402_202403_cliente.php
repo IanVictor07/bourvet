@@ -3,9 +3,9 @@
 use yii\db\Migration;
 
 /**
- * Class m230401_173451_cliente
+ * Class m230402_202403_cliente
  */
-class m230401_173451_cliente extends Migration
+class m230402_202403_cliente extends Migration
 {
     /**
      * {@inheritdoc}
@@ -39,7 +39,7 @@ class m230401_173451_cliente extends Migration
 
     public function down()
     {
-        echo "m230401_173451_cliente cannot be reverted.\n";
+        echo "m230402_202403_cliente cannot be reverted.\n";
 
         return false;
     }

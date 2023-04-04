@@ -3,9 +3,9 @@
 use yii\db\Migration;
 
 /**
- * Class m230401_173520_compra
+ * Class m230402_211036_compra
  */
-class m230401_173520_compra extends Migration
+class m230402_211036_compra extends Migration
 {
     /**
      * {@inheritdoc}
@@ -18,6 +18,7 @@ class m230401_173520_compra extends Migration
             'data_pag' => $this->date()->notNull(),
             'forma_pag'=> $this->string()->notNull(),
             'cliente_id'=> $this->integer(),
+            'servico_id'=> $this->integer(),
         ]);
 
         $this->addForeignKey(
@@ -28,6 +29,16 @@ class m230401_173520_compra extends Migration
             'id',
             'RESTRICT'
         );
+
+        $this->addForeignKey(
+            'servico_fk_compra',
+            'compra',
+            'servico_id',
+            'servico',
+            'id',
+            'RESTRICT'
+        );
+
     }
 
     /**
@@ -35,8 +46,9 @@ class m230401_173520_compra extends Migration
      */
     public function safeDown()
     {
-        
         $this->dropForeignKey('cliente_fk','compra');
+        $this->dropForeignKey('servico_fk_compra','compra');
+
 
         $this->dropTable('compra');
     }
@@ -50,7 +62,7 @@ class m230401_173520_compra extends Migration
 
     public function down()
     {
-        echo "m230401_173520_compra cannot be reverted.\n";
+        echo "m230402_211036_compra cannot be reverted.\n";
 
         return false;
     }

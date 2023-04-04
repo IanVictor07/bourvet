@@ -27,6 +27,7 @@ class ConsultaController extends Controller
                         'delete' => ['POST'],
                     ],
                 ],
+
             ]
         );
     }

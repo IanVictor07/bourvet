@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use app\models\Cliente;
+use app\models\Servico;
 
 /** @var yii\web\View $this */
 /** @var app\models\Compra $model */
@@ -27,6 +28,12 @@ use app\models\Cliente;
            ['prompt' => 'Selecione um cliente'] )
     ?>
 
+    <?= $form->field($model, 'servico_id')->
+        dropDownList(ArrayHelper::map(Servico::find()
+            ->orderBy('nome')
+            ->all(),'id','nome'),
+            ['prompt' => 'Selecione um serviço'] )
+    ?>
 
 
     <P> <P>

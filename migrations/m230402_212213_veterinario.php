@@ -3,20 +3,20 @@
 use yii\db\Migration;
 
 /**
- * Class m230401_173451_cliente
+ * Class m230402_212213_veterinario
  */
-class m230401_173451_cliente extends Migration
+class m230402_212213_veterinario extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->createTable('cliente', [
+        $this->createTable('veterinario', [
             'id' => $this->primaryKey(),
             'nome' => $this->string(100)->notNull(),
-            'cpf' => $this->integer(11)->notNull(),
-            'email' => $this->text()->notNull(),
+            'cpf' => $this->string(11)->notNull()->unique(),
+            'email' => $this->string(255)->notNull(),
             'data_nasc' => $this->date()->notNull(),
         ]);
     }
@@ -26,7 +26,7 @@ class m230401_173451_cliente extends Migration
      */
     public function safeDown()
     {
-        $this->dropTable('cliente');
+        $this->dropTable('veterinario');
     }
 
     /*
@@ -38,7 +38,7 @@ class m230401_173451_cliente extends Migration
 
     public function down()
     {
-        echo "m230401_173451_cliente cannot be reverted.\n";
+        echo "m230402_212213_veterinario cannot be reverted.\n";
 
         return false;
     }
