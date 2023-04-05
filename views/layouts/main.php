@@ -39,15 +39,14 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
+            ['label' => 'Página inicial', 'url' => ['/site/index']],
             ['label' => 'Cliente', 'url' => ['/cliente/index']],
             ['label' => 'Animais', 'url' => ['/animal/index']],
-            ['label' => 'Compra', 'url' => ['/compra/index']],
-            ['label' => 'Consulta', 'url' => ['/consulta/index']],
             ['label' => 'Serviços', 'url' => ['/servico/index']],
+            ['label' => 'Compra', 'url' => ['/compra/index']],
             ['label' => 'Veterinário', 'url' => ['/veterinario/index']],
+            ['label' => 'Consulta', 'url' => ['/consulta/index']],
             ['label' => 'Espécie', 'url' => ['/especie/index']],
-            ['label' => 'Usuário', 'url' => ['/usuario/index']],
             ['label' => 'Relatórios', 'url' => ['/relatorios/index']],
            
             Yii::$app->user->isGuest

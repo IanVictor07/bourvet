@@ -24,6 +24,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'forma_pag') ?>
 
     <?= $form->field($model, 'cliente_id') ?>
+
+    <?= $form->field($model, 'servico_id') ?>
     
 
     <div class="form-group">

@@ -9,6 +9,7 @@ use app\models\Servico;
 /** @var yii\web\View $this */
 /** @var app\models\Compra $model */
 /** @var yii\widgets\ActiveForm $form */
+
 ?>
 
 <div class="compra-form">

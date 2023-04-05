@@ -48,6 +48,7 @@ class CompraSearch extends Compra
             'query' => $query,
         ]);
 
+        
         $this->load($params);
 
         if (!$this->validate()) {

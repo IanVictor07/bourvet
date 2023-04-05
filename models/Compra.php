@@ -72,8 +72,8 @@ class Compra extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getServicos()
+    public function getServico()
     {
-        return $this->hasMany(ItensServico::class, ['servico_id' => 'id']);
+        return $this->hasMany(Servico::class, ['servico_id' => 'id']);
     }
 }

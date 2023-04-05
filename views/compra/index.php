@@ -38,7 +38,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'cliente.nome',
                 'label'=>'CLIENTE',
     
-                ],
+             ],
+
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Compra $model, $key, $index, $column) {

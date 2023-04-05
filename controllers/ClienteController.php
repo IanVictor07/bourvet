@@ -32,6 +32,7 @@ class ClienteController extends Controller
                         'delete' => ['POST'],
                     ],
                 ],
+
      
             ]
         );
@@ -87,6 +88,7 @@ class ClienteController extends Controller
         return $this->hasMany(Compra::class,['cliente_fk'=>'id'])->orderBy('data DESC');
         
     }
+
 
 
     /**

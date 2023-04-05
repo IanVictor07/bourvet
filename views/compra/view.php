@@ -38,8 +38,18 @@ $this->params['breadcrumbs'][] = $this->title;
             'label'=>'CLIENTE',
 
             ],
+            [
+
+            'attribute' => 'servico.nome',
+            'label'=>'SERVIÇO',
+    
+            ],
 
         ],
+
+        
     ]) ?>
+
+    
 
 </div>
